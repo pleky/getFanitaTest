@@ -1,0 +1,48 @@
+@import "~antd/dist/antd.less";
+@import "~antd/lib/style/themes/default.less";
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap');
+
+@import "./colors/colors.less";
+
+@theme: default;
+@ant-prefix: ant;
+@html-selector: html;
+
+
+// -------- Colors -----------
+@body-background: @body-background-main;
+@component-background: #fff;
+@success-color: @primary-color;
+
+
+// Progress
+// --
+@progress-default-color: @primary-color;
+@progress-remaining-color: @primary-color-30;
+@progress-info-text-color: @progress-text-color;
+@progress-radius: 100px;
+@progress-steps-item-bg: #f3f3f3;
+@progress-text-font-size: 1em;
+@progress-text-color: @text-color; // This is for circle text color, should be renamed better
+@progress-circle-text-font-size: 1em;
+
+
+// Text
+@font-family: 'Be Vietnam', sans-serif;
+@text-color-secondary: @primary-color-70;
+@font-size-base: 14px;
+@font-size-lg: @font-size-base + 2px;
+@font-size-sm: 12px;
+@font-size-big: 18px;
+@heading-1-size: ceil(@font-size-base * 2.71);
+@heading-2-size: ceil(@font-size-base * 2.14);
+@heading-3-size: ceil(@font-size-base * 1.71);
+@heading-4-size: ceil(@font-size-base * 1.42);
+@heading-5-size: ceil(@font-size-base * 1.14);
+
+//Buttons
+@line-height-base: 1;
+@border-radius-base: 10px;
+@btn-default-color: @primary-color-70;
+@btn-default-bg: @body-background-main;
+@btn-default-border: @primary-color-70;
