@@ -159,7 +159,7 @@ function QuestionPage() {
           <Row justify='center' align='middle'>
             <Col>
                 <Title level={5}>
-                 {/* {questionData[qid].question} */}
+                 {questionData[qid].question}
                 </Title>
             </Col>
           </Row>
