@@ -33,15 +33,6 @@ function QuestionPage() {
 
   const isLastQuestion = questionData && questionData.length ? qid == questionData.length - 1 : false
 
-  React.useEffect(() => {
-    if (!questionData) {
-      console.log('not found')
-      window.location.href = '/404'
-      return false
-    }
-    return true
-  }, [questionData])
-
   const nextPage = (type) => {
     let currentQuestion = qid;
     currentQuestion++;
@@ -101,10 +92,10 @@ function QuestionPage() {
     const resp = await questionnairyAPI.createQuestionnaires(dataToSubmit)
     if (resp.status_code == 201) {
       router.replace('/')
-      setIsSubmitting(false)
-      resetData()
-      resetQuestion()
     }
+    setIsSubmitting(false)
+    resetData()
+    resetQuestion()
 
   }
 
