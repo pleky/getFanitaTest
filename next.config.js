@@ -14,6 +14,7 @@ module.exports = withAntdLess({
   javascriptEnabled: true,
 
   // Other Config Here...
+  target: "serverless",
 
   webpack(config) {
     return config;

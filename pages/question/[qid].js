@@ -33,6 +33,16 @@ function QuestionPage() {
 
   const isLastQuestion = questionData && questionData.length ? qid == questionData.length - 1 : false
 
+  React.useEffect(() => {
+    if (!questionData) {
+      console.log('not found')
+      // router.replace('/asdfasdf')
+      window.location.href = '/404'
+      return false
+    }
+    return true
+  }, [questionData])
+
   const nextPage = (type) => {
     let currentQuestion = qid;
     currentQuestion++;
@@ -42,7 +52,7 @@ function QuestionPage() {
 
     let selectedOption = null
 
-    if (questionData[qid].data) {
+    if (questionData && questionData[qid].data) {
       selectedOption = questionData[qid].data.find((question) => question.selected == true)
       setLastOption(selectedOption)
     }
@@ -60,7 +70,7 @@ function QuestionPage() {
       return 
     }
 
-    if (questionData[qid].type == questionType.text) {
+    if (questionData && questionData[qid].type == questionType.text) {
       if (!questionData[qid].answer) {
         setValid(false)
         return 
@@ -80,7 +90,7 @@ function QuestionPage() {
   }
 
   const handleSubmit = async () => {
-    if (questionData[qid].type == questionType.text) {
+    if (questionData && questionData[qid].type == questionType.text) {
       if (!questionData[qid].answer) {
         setValid(false)
         return 
@@ -149,7 +159,7 @@ function QuestionPage() {
           <Row justify='center' align='middle'>
             <Col>
                 <Title level={5}>
-                 {questionData[qid].question}
+                 {/* {questionData[qid].question} */}
                 </Title>
             </Col>
           </Row>
