@@ -36,7 +36,6 @@ function QuestionPage() {
   React.useEffect(() => {
     if (!questionData) {
       console.log('not found')
-      // router.replace('/asdfasdf')
       window.location.href = '/404'
       return false
     }
@@ -90,6 +89,7 @@ function QuestionPage() {
   }
 
   const handleSubmit = async () => {
+
     if (questionData && questionData[qid].type == questionType.text) {
       if (!questionData[qid].answer) {
         setValid(false)
@@ -100,10 +100,10 @@ function QuestionPage() {
     setIsSubmitting(true)
     const resp = await questionnairyAPI.createQuestionnaires(dataToSubmit)
     if (resp.status_code == 201) {
+      router.replace('/')
       setIsSubmitting(false)
       resetData()
       resetQuestion()
-      router.replace('/')
     }
 
   }
